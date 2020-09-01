@@ -16,11 +16,12 @@ Bringing up the Docker Compose network with `site` instead of just using `up`, e
 - **mysql** - `:3306`
 - **php** - `:9000`
 
-Three additional containers are included that handle Composer, NPM, and Artisan commands *without* having to have these platforms installed on your local computer. Use the following command examples from your project root, modifying them to fit your particular use case.
+Four additional containers are included that handle Composer, NPM, Artisan and Vapor commands *without* having to have these platforms installed on your local computer. Use the following command examples from your project root, modifying them to fit your particular use case.
 
 - `docker-compose run --rm composer update`
 - `docker-compose run --rm npm run dev`
 - `docker-compose run --rm artisan migrate` 
+- `docker-compose run --rm vapor deploy`
 
 ## Persistent MySQL Storage
 

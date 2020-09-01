@@ -34,6 +34,8 @@ services:
       SERVICE_NAME: mysql
     networks:
       - laravel
+    volumes:
+      - ./mysql:/var/lib/mysql
 
   php:
     build:
@@ -79,3 +81,14 @@ services:
     entrypoint: ['php', '/var/www/html/artisan']
     networks:
       - laravel
+
+  vapor:
+    build:
+      context: .
+      dockerfile: vapor.dockerfile
+    container_name: vapor
+    volumes:
+      - ./src:/var/www/html
+      - ./volumes/root:/root
+    working_dir: /var/www/html
+#    entrypoint: ['vapor']
