@@ -91,4 +91,4 @@ services:
       - ./src:/var/www/html
       - ./volumes/root:/root
     working_dir: /var/www/html
-#    entrypoint: ['vapor']
+    entrypoint: ['vapor']
