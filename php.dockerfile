@@ -2,7 +2,9 @@ FROM php:7.4-fpm-alpine
 
 WORKDIR /var/www/html
 
-RUN docker-php-ext-install pdo pdo_mysql
+RUN apk add zlib-dev icu-dev g++
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install pdo pdo_mysql intl
 
 ARG XDEBUG_VERSION=2.8.0beta1
 
